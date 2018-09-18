@@ -6,14 +6,14 @@ import Order from "./views/Order"
 
 const Nav = () => {
   return (
-    <div className="flex h3 justify-around items-center sans fixed bg-white w-100 top-0">
+    <div className="nav flex h3 justify-around items-center sans fixed bg-white w-100 top-0">
       <Link to="/">
         <span className="flex items-center serif">
           <span className="logo" /> Pattern
         </span>
       </Link>
       <strong>
-        <Link to="/order">+1 604 123 5688 | Chat</Link>
+        <Link to="/order" className="underline-hover">+1 604 123 5688 | Chat</Link>
       </strong>
     </div>
   )

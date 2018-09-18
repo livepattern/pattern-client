@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import OrderRow from "./components/OrderRow"
-import CenteredHeaderWithDescription from './components/CenteredHeaderWithDescription'
+import CenteredHeaderWithDescription from "./components/CenteredHeaderWithDescription"
+import Button from "./components/Button"
 
 class Order extends Component {
   constructor() {
@@ -60,7 +61,10 @@ class Order extends Component {
   render() {
     return (
       <div className="mt4">
-      <CenteredHeaderWithDescription header="Lease furniture for your office space" textSize="f2" />
+        <CenteredHeaderWithDescription
+          header="Lease furniture for your office space"
+          textSize="f2"
+        />
         <div className="bg-near-white mr5-ns ml5-ns pa3-ns mb4">
           {/* Row */}
           <table className="f5 w-100 mw8 center" cellSpacing="0">
@@ -130,7 +134,32 @@ class Order extends Component {
             </tbody>
           </table>
         </div>
-        <CenteredHeaderWithDescription header="Your contact details so we can get in touch" description="We'll be in touch very soon" />
+        <div className="light-yellow-bg">
+          <CenteredHeaderWithDescription
+            header="Your contact details so we can get in touch"
+          />
+          <div className="flex justify-center">
+            <form className="flex flex-column items-center mb6 bg-white w-90 w-60-m w-60-l pa3">
+              <label className="w-100 pa3">
+                <input type="text" placeholder="Full Name / Company" />
+              </label>
+              <label className="w-100 pa3">
+                <input type="tel" name="phone" placeholder="Phone Number" />
+              </label>
+              <label className="w-100 pa3">
+                <input type="email" name="email" placeholder="Email Address" />
+              </label>
+              <label className="w-100 pa3">
+                <textarea name="message" placeholder="Message (optional)" />
+              </label>
+              <p className="mb4">
+                By sending your order, you agree to our{" "}
+                <span className="link">Terms and Conditions</span>
+              </p>
+              <Button text="Contact us with your order" />
+            </form>
+          </div>
+        </div>
       </div>
     )
   }

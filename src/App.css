@@ -1,6 +1,27 @@
 .App {
   font-family: 'Lato', sans-serif;
   color: #4e5661;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: inherit;
+}
+
+input, textarea{
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+
 }
 
 .logo {
@@ -12,8 +33,16 @@
   display: inline-block;
 }
 
+.nav {
+  box-shadow: 0 2px 4px 0 rgba(50,50,93,.1);
+}
+
 .yellow-bg {
   background-color: #fbde67;
+}
+
+.light-yellow-bg {
+  background-color: #fefbee;
 }
 
 .serif {

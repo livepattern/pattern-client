@@ -1,5 +1,6 @@
 import React from "react"
-import CenteredHeaderWithDescription from './components/CenteredHeaderWithDescription'
+import CenteredHeaderWithDescription from "./components/CenteredHeaderWithDescription"
+import Button from "./components/Button"
 
 const HowItWorksIconGroup = ({ title, description }) => {
   return (
@@ -19,12 +20,14 @@ const Home = () => {
           <div className="lh-copy measure-narrow mb3">
             Why buy your office furniture outright when you can lease to own?
           </div>
-          <div className="br-pill yellow-bg w4 tc pa3">Order Now</div>
+          <div className="w4">
+            <Button text="Order Now" />
+          </div>
         </div>
       </div>
 
       {/* How it Works */}
-      <div className="bg-washed-yellow">
+      <div className="light-yellow-bg">
         <CenteredHeaderWithDescription
           header="How it works"
           description="Furniture leasing for your office that checks all the boxes"
@@ -63,16 +66,19 @@ const Home = () => {
           Need something different? We're flexible so send us your floorplan or
           get in touch.
         </div>
-        <div className="br-pill yellow-bg w4 tc pa3">Order Now</div>
+        <Button text="Order Now" />
       </div>
 
-      <div className="flex">
-        <div className="w-50 bg-washed-yellow pa5 tc serif f3">
+      <div className="flex flex-column flex-row-ns">
+        <div className="w-100 w-50-ns light-yellow-bg pa5 serif f3 lh-copy">
+          <div className="measure-narrow">
+
           "Willson will come and deliver all our furniture if anyone wants to
           know; he knows how to set up 14 chairs in 2 hours and has white
           gloves."{" "}
+          </div>
         </div>
-        <div className="w-50 bg-light-gray" />
+        <div className="w-100 w-50-ns bg-light-gray" />
       </div>
       {/* About Pattern */}
       <CenteredHeaderWithDescription
