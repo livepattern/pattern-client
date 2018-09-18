@@ -1,14 +1,5 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-
-const HeaderAndDescription = ({ header, description }) => {
-  return (
-    <div className="flex flex-column items-center">
-      <div className="tc serif f2 mb3 pt5">{header}</div>
-      <div className="tc fw3 mb5 measure">{description}</div>
-    </div>
-  )
-}
+import React from "react"
+import CenteredHeaderWithDescription from './components/CenteredHeaderWithDescription'
 
 const HowItWorksIconGroup = ({ title, description }) => {
   return (
@@ -19,9 +10,7 @@ const HowItWorksIconGroup = ({ title, description }) => {
   )
 }
 
-const Home = ({
-
-}) => {
+const Home = () => {
   return (
     <React.Fragment>
       <div className="h7 bg-light-gray mt5">
@@ -36,7 +25,7 @@ const Home = ({
 
       {/* How it Works */}
       <div className="bg-washed-yellow">
-        <HeaderAndDescription
+        <CenteredHeaderWithDescription
           header="How it works"
           description="Furniture leasing for your office that checks all the boxes"
         />
@@ -64,7 +53,7 @@ const Home = ({
       </div>
 
       {/* Furnish your space */}
-      <HeaderAndDescription
+      <CenteredHeaderWithDescription
         header="Furnish your space"
         description="Here's our style"
       />
@@ -86,7 +75,7 @@ const Home = ({
         <div className="w-50 bg-light-gray" />
       </div>
       {/* About Pattern */}
-      <HeaderAndDescription
+      <CenteredHeaderWithDescription
         header="About Pattern"
         description="Starting and building a company is hard and life is too short to deal with trips to a Swedish boxed store. Pattern hears you and aims to be your humble servitore, and that all your Lower Mainland office furnishing needs we will support."
       />

@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import "./App.css"
-import Home from "./views/home"
-import Order from "./views/order"
+import Home from "./views/Home"
+import Order from "./views/Order"
 
 const Nav = () => {
   return (
