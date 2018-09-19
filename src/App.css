@@ -7,11 +7,12 @@
 a {
   text-decoration: none;
 }
+
 a:visited {
   color: inherit;
 }
 
-input, textarea{
+input, textarea {
   width: 100%;
   padding: 12px;
   box-sizing: border-box;

@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+import TC from './components/TC'
+
 import OrderRow from "./components/OrderRow"
 import CenteredHeaderWithDescription from "./components/CenteredHeaderWithDescription"
 import Button from "./components/Button"
@@ -68,6 +70,14 @@ class Order extends Component {
         <div className="bg-near-white mr5-ns ml5-ns pa3-ns mb4">
           {/* Row */}
           <table className="f5 w-100 mw8 center" cellSpacing="0">
+            <colgroup>
+              <col width="20%" />
+              <col width="30%" />
+              <col width="10%" />
+              <col width="20%" />
+              <col width="30%" />
+              <col width="10%" />
+            </colgroup>
             <tbody className="lh-copy b">
               <OrderRow
                 product="Chair"
@@ -135,9 +145,7 @@ class Order extends Component {
           </table>
         </div>
         <div className="light-yellow-bg">
-          <CenteredHeaderWithDescription
-            header="Your contact details so we can get in touch"
-          />
+          <CenteredHeaderWithDescription header="Your contact details so we can get in touch" />
           <div className="flex justify-center">
             <form className="flex flex-column items-center mb6 bg-white w-90 w-60-m w-60-l pa3">
               <label className="w-100 pa3">
@@ -152,10 +160,7 @@ class Order extends Component {
               <label className="w-100 pa3">
                 <textarea name="message" placeholder="Message (optional)" />
               </label>
-              <p className="mb4">
-                By sending your order, you agree to our{" "}
-                <span className="link">Terms and Conditions</span>
-              </p>
+              <TC />
               <Button text="Contact us with your order" />
             </form>
           </div>
