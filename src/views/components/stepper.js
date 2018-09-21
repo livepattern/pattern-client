@@ -3,7 +3,7 @@ import classNames from "classnames"
 
 const Counter = ({ children, onClick, value, hasMin = false, min }) => {
   const classes = classNames({
-    "h2 w2 f3 br-100 bg-white flex items-center justify-center mr2 user-select-none": true,
+    "h2 w2 f3 br-100 bg-white flex items-center justify-center mr3 user-select-none": true,
     "pointer link dim": hasMin ? value > min : true,
     "moon-gray forbidden": hasMin ? value <= min : false
   })
@@ -27,11 +27,11 @@ class Stepper extends Component {
           >
             -
           </Counter>
+          <div className="f4 mr3">{this.props.quantity}</div>
           <Counter onClick={this.props.increment} value={this.props.quantity}>
             +
           </Counter>
         </div>
-        <div className="f4">{this.props.quantity}</div>
       </div>
     )
   }

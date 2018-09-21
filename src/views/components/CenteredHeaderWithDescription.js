@@ -1,15 +1,20 @@
-import React from 'react'
-import classNames from 'classnames'
+import React from "react"
+import classNames from "classnames"
 
-const CenteredHeaderWithDescription = ({ header, description, textSize="f2" }) => {
+const CenteredHeaderWithDescription = ({
+  header,
+  description,
+  textSize = "f2",
+  id
+}) => {
   const header_classes = classNames({
-    "tc serif mb3 pt5": true,
-    [textSize]: true,
+    "tc serif mb3 pt5 b f2-ns f4 f3-m": true,
+    [textSize]: true
   })
   return (
-    <div className="flex flex-column items-center">
+    <div id={id} className="flex flex-column items-center">
       <div className={header_classes}>{header}</div>
-      <div className="tc fw3 mb5 measure lh-copy">{description}</div>
+      <div className="tc fw5 mb5 measure lh-copy ph3">{description}</div>
     </div>
   )
 }

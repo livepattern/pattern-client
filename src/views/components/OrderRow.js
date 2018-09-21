@@ -13,9 +13,6 @@ const OrderRow = ({
   return (
     <tr>
       <td className="pa3">
-        <div className=" w3 h2 bg-gray" />
-      </td>
-      <td className="pa3">
         {product}
         <div className="f6 normal">{description}</div>
       </td>
@@ -30,7 +27,7 @@ const OrderRow = ({
           quantity={quantity}
         />
       </td>
-      <td className="pa3 tr">
+      <td className="pa3 tr nowrap">
         ${totalCost}
         .00
       </td>

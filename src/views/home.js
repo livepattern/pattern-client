@@ -1,101 +1,122 @@
 import React from "react"
+import Footer from "./components/Footer"
 import CenteredHeaderWithDescription from "./components/CenteredHeaderWithDescription"
+import HowItWorksIconGroup from './components/HowItWorksIconGroup'
 import Button from "./components/Button"
-
-const HowItWorksIconGroup = ({ title, description }) => {
-  return (
-    <div className="flex flex-column items-center tc w-100 w-third-ns pa4">
-      <div className="serif mb3">{title}</div>
-      <div>{description}</div>
-    </div>
-  )
-}
+import delivery_icon from "../icons/delivery.png"
+import price_icon from "../icons/price.png"
+import style_icon from "../icons/style.png"
+import truck_photo from "../images/truck.png"
 
 const Home = () => {
   return (
     <React.Fragment>
-      <div className="h7 bg-light-gray mt5">
-        <div className="pa5">
+      <div id="hero" className="mt5 white">
+        <div className="pv6 ph3 ph6-ns">
           <div className="f2 serif lh-title mb3">Pattern</div>
-          <div className="lh-copy measure-narrow mb3">
-            Why buy your office furniture outright when you can lease to own?
+          <div className="lh-copy measure-narrow mb4">
+            Rent Office Furniture Today
           </div>
-          <div className="w4">
-            <Button text="Order Now" />
+          <div className="w4 black">
+            <Button text="Get a Quote" />
           </div>
         </div>
       </div>
 
+      {/* Free consultation */}
+      <div className="h3 flex items-center justify-center yellow-bg fw5 ph3">
+        For expert furniture advice, schedule a FREE consultation with our
+        designers
+      </div>
+
       {/* How it Works */}
-      <div className="light-yellow-bg">
+      <div className="light-yellow-bg pb5">
         <CenteredHeaderWithDescription
           header="How it works"
+          id="how-it-works"
           description="Furniture leasing for your office that checks all the boxes"
         />
 
         <div className="flex flex-column flex-row-ns">
           <HowItWorksIconGroup
             title="Convenience"
-            description="Pick your office furniture, Lorem ipsum, dolor sit amet
-        consectetur adipisicing elit. Nisi, porro itaque. Architecto,
-        laboriosam error itaque omnis libero corrupti cumque"
+            img={delivery_icon}
+            description="Choose your furniture, pick your timeline, and we'll do the rest. Pattern Delivery will drop-off, set-up, and pick-up your furniture for free. "
           />
           <HowItWorksIconGroup
             title="Price"
-            description="Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Aperiam unde inventore similique dicta cupiditate illum sed sunt
-          accusamus autem, eius voluptatibus est fuga rerum vel, molestiae
-          ipsum."
+            img={price_icon}
+            description="If your need is temporary, Pattern offers a cost effective and hassle-free solution with transparent prices."
           />
           <HowItWorksIconGroup
             title="Flexibility"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-          corrupti nam quia"
+            img={style_icon}
+            description="Pattern office designers are vetted professionals and real people. From small startup space to larger HQs, we’ve got the designer for you."
           />
+        </div>
+        <div className="flex justify-center">
+          <div className="w4">
+            <Button text="Get a Quote" />
+          </div>
         </div>
       </div>
 
       {/* Furnish your space */}
       <CenteredHeaderWithDescription
         header="Furnish your space"
+        id="furnish-your-space"
         description="Here's our style"
       />
       <div className="h6 pa5 bg-light-gray mb3" />
       <div className="flex flex-column items-center mb5">
-        <div className="mb4">
+        <div className="mb4 ph3">
           Need something different? We're flexible so send us your floorplan or
           get in touch.
         </div>
         <Button text="Order Now" />
       </div>
 
-      <div className="flex flex-column flex-row-ns">
-        <div className="w-100 w-50-ns light-yellow-bg pa5 serif f3 lh-copy">
-          <div className="measure-narrow">
-
-          "Willson will come and deliver all our furniture if anyone wants to
-          know; he knows how to set up 14 chairs in 2 hours and has white
-          gloves."{" "}
+      <div className="flex flex-column flex-row-l">
+        <div className="w-100 w-50-l light-yellow-bg pa3 pa5-m pa5-l serif f3 lh-copy tc flex flex-column items-center justify-center">
+          <div className="mb3">
+            Pattern is Vancouver’s leading furniture rental company.
           </div>
+          <div className="mb3">Get your quote in less than 24 hours.</div>
+          <div className="mb3">Enjoy free delivery with a smile.</div>
         </div>
-        <div className="w-100 w-50-ns bg-light-gray" />
+        <div
+          className="w-100 w-50-l"
+          style={{ objectFit: "cover" }}
+        >
+          <img src={truck_photo} />
+        </div>
       </div>
       {/* About Pattern */}
       <CenteredHeaderWithDescription
         header="About Pattern"
-        description="Starting and building a company is hard and life is too short to deal with trips to a Swedish boxed store. Pattern hears you and aims to be your humble servitore, and that all your Lower Mainland office furnishing needs we will support."
+        description={
+          <div>
+            <div className="mb3">
+              Pattern is on a mission to impact how the physical workspace
+              affects the employee experience. We offer businesses affordable
+              ways to rent beautiful office furniture on their terms.{" "}
+            </div>
+            <div className="mb3">
+              Pattern believes that everyone deserves to work at a beautiful
+              office and work station, and that design and set-up should be
+              affordable and easy. We’re lucky to have great relationships with
+              retailers, a diverse and talented group of professional designers,
+              and an operations team that will go the distance for our clients.
+            </div>
+            <div>
+              Pattern is studying the emerging science of how the office space
+              impacts how people work. We’d love to hear from you.
+            </div>
+          </div>
+        }
       />
 
-      <div className="flex justify-around">
-        <div className="flex items-center">
-          <span className="logo" /> Pattern
-        </div>
-        <div className="flex">
-          <span className="mr3">Furnish your home</span>
-          <span className="mr3">How it Works</span>
-          <span className="mr3">About Pattern</span>
-        </div>
-      </div>
+      <Footer />
     </React.Fragment>
   )
 }

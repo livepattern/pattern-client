@@ -1,24 +1,23 @@
 import React, { Component } from "react"
-import TC from './components/TC'
-
+import Form from "./components/Form"
 import OrderRow from "./components/OrderRow"
 import CenteredHeaderWithDescription from "./components/CenteredHeaderWithDescription"
-import Button from "./components/Button"
 
 class Order extends Component {
   constructor() {
     super()
     this.state = {
-      chair: { quantity: 0, unitCost: 50 },
-      desk: { quantity: 0, unitCost: 75 },
-      conference_table: { quantity: 0, unitCost: 100 },
-      package_lean: { quantity: 0, unitCost: 150 },
-      package_team: { quantity: 0, unitCost: 250 },
-      package_branch: { quantity: 0, unitCost: 550 }
+      chair: { quantity: 0, unitCost: 123 },
+      desk: { quantity: 0, unitCost: 218 },
+      conference_table: { quantity: 0, unitCost: 303 },
+      filing_cabinet: { quantity: 0, unitCost: 95 },
+      lounge_seating: { quantity: 0, unitCost: 272 },
+      coffee_table: { quantity: 0, unitCost: 127 }
     }
     this.increment = this.increment.bind(this)
     this.decrement = this.decrement.bind(this)
     this.calculateTotalCostForRow = this.calculateTotalCostForRow.bind(this)
+    this.submitOrder = this.submitOrder.bind(this)
   }
 
   increment = product => () => {
@@ -60,23 +59,26 @@ class Order extends Component {
     return totalCost
   }
 
+  submitOrder() {
+    console.log("this.state", this.state)
+  }
+
   render() {
     return (
-      <div className="mt4">
+      <div className="mt5">
         <CenteredHeaderWithDescription
           header="Lease furniture for your office space"
-          textSize="f2"
+          textSize="f2-ns f4 f3-m"
+          description="No set-up or hidden fees!"
         />
-        <div className="bg-near-white mr5-ns ml5-ns pa3-ns mb4">
+        <div className="bg-near-white mr5-ns ml5-ns pa3-ns">
           {/* Row */}
-          <table className="f5 w-100 mw8 center" cellSpacing="0">
+          <table className="f5 mw8 center" cellSpacing="0">
             <colgroup>
+              <col width="30%" />
               <col width="20%" />
               <col width="30%" />
-              <col width="10%" />
               <col width="20%" />
-              <col width="30%" />
-              <col width="10%" />
             </colgroup>
             <tbody className="lh-copy b">
               <OrderRow
@@ -104,34 +106,30 @@ class Order extends Component {
                 totalCost={this.calculateTotalCostForRow("conference_table")}
               />
               <OrderRow
-                product="Lean Machine Package"
-                description="3 desks, 3 chairs"
-                unitCost={this.state.package_lean.unitCost}
-                quantity={this.state.package_lean.quantity}
-                increment={this.increment("package_lean")}
-                decrement={this.decrement("package_lean")}
-                totalCost={this.calculateTotalCostForRow("package_lean")}
+                product="Filing Cabinet"
+                unitCost={this.state.filing_cabinet.unitCost}
+                quantity={this.state.filing_cabinet.quantity}
+                increment={this.increment("filing_cabinet")}
+                decrement={this.decrement("filing_cabinet")}
+                totalCost={this.calculateTotalCostForRow("filing_cabinet")}
               />
               <OrderRow
-                product="Team Building Package"
-                description="10 desks, 15 chairs, 1 conference table"
-                unitCost={this.state.package_team.unitCost}
-                quantity={this.state.package_team.quantity}
-                increment={this.increment("package_team")}
-                decrement={this.decrement("package_team")}
-                totalCost={this.calculateTotalCostForRow("package_team")}
+                product="Lounge Seating"
+                unitCost={this.state.lounge_seating.unitCost}
+                quantity={this.state.lounge_seating.quantity}
+                increment={this.increment("lounge_seating")}
+                decrement={this.decrement("lounge_seating")}
+                totalCost={this.calculateTotalCostForRow("lounge_seating")}
               />
               <OrderRow
-                product="New Branch Package"
-                description="A bunch of stuff"
-                unitCost={this.state.package_branch.unitCost}
-                quantity={this.state.package_branch.quantity}
-                increment={this.increment("package_branch")}
-                decrement={this.decrement("package_branch")}
-                totalCost={this.calculateTotalCostForRow("package_branch")}
+                product="Coffee Table"
+                unitCost={this.state.coffee_table.unitCost}
+                quantity={this.state.coffee_table.quantity}
+                increment={this.increment("coffee_table")}
+                decrement={this.decrement("coffee_table")}
+                totalCost={this.calculateTotalCostForRow("coffee_table")}
               />
               <tr>
-                <td />
                 <td />
                 <td />
                 <td className="tr pa3">
@@ -144,27 +142,9 @@ class Order extends Component {
             </tbody>
           </table>
         </div>
-        <div className="light-yellow-bg">
-          <CenteredHeaderWithDescription header="Your contact details so we can get in touch" />
-          <div className="flex justify-center">
-            <form className="flex flex-column items-center mb6 bg-white w-90 w-60-m w-60-l pa3">
-              <label className="w-100 pa3">
-                <input type="text" placeholder="Full Name / Company" />
-              </label>
-              <label className="w-100 pa3">
-                <input type="tel" name="phone" placeholder="Phone Number" />
-              </label>
-              <label className="w-100 pa3">
-                <input type="email" name="email" placeholder="Email Address" />
-              </label>
-              <label className="w-100 pa3">
-                <textarea name="message" placeholder="Message (optional)" />
-              </label>
-              <TC />
-              <Button text="Contact us with your order" />
-            </form>
-          </div>
-        </div>
+
+        <CenteredHeaderWithDescription header="Your contact details so we can get in touch" />
+        <Form onSubmit={this.submitOrder} />
       </div>
     )
   }

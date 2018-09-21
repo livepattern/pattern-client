@@ -5,6 +5,7 @@
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
@@ -17,19 +18,35 @@ input, textarea {
   padding: 12px;
   box-sizing: border-box;
   resize: vertical;
-}
-
-input {
   border: none;
   border-bottom: 1px solid #ccc;
+}
 
+#hero {
+  background-image: url(./images/hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+@media only screen and (min-width: 600px) {
+  #hero {
+    height: 400px;
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 800px) {
+  #hero {
+    height: 500px;
+    background-size: cover;
+  }
 }
 
 .logo {
   height: 40px;
   width: 40px;
   margin-right: 10px;
-  background-color: #fbde67;
+  background-color: #FCDF5C;
   border-radius: 50%;
   display: inline-block;
 }
@@ -39,15 +56,15 @@ input {
 }
 
 .yellow-bg {
-  background-color: #fbde67;
+  background-color: #FCDF5C;
 }
 
 .light-yellow-bg {
-  background-color: #fefbee;
+  background-color: #FEFBEE;
 }
 
 .serif {
-  font-family: 'Noto Serif JP', serif;
+  font-family: 'Domine', serif;
 }
 
 .sans {
@@ -62,3 +79,7 @@ input {
   user-select: none;
 }
 
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}
