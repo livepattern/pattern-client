@@ -4,7 +4,7 @@ import Stepper from "./Stepper"
 const OrderRow = ({
   product,
   description,
-  unitCost,
+  calculatedCost,
   increment,
   decrement,
   quantity,
@@ -17,7 +17,7 @@ const OrderRow = ({
         <div className="f6 normal">{description}</div>
       </td>
       <td className="pa3 tr">
-        ${unitCost}
+        ${calculatedCost}
         .00
       </td>
       <td className="pa3">

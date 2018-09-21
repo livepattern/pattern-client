@@ -14,14 +14,14 @@ const Footer = () => {
           <AnchorLink
             className="mr3 underline-hover nowrap"
             href="#furnish-your-space"
-            offset="50"
+            offset="150"
           >
             Furnish your space
           </AnchorLink>
           <AnchorLink
             className="mr3 underline-hover nowrap"
             href="#how-it-works"
-            offset="50"
+            offset="150"
           >
             How it Works
           </AnchorLink>

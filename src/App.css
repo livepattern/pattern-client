@@ -79,7 +79,15 @@ input, textarea {
   user-select: none;
 }
 
+.sticky {
+  position: sticky;
+  top: 62px;
+}
 
 .ReactModal__Body--open {
   overflow: hidden;
+}
+
+.rangeslider-horizontal .rangeslider__fill {
+  background-color: #FCDF5C !important;
 }

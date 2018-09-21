@@ -1,49 +1,69 @@
 import React, { Component } from "react"
+import Slider from "react-rangeslider"
 import Form from "./components/Form"
 import OrderRow from "./components/OrderRow"
 import CenteredHeaderWithDescription from "./components/CenteredHeaderWithDescription"
+import "react-rangeslider/lib/index.css"
+import COSTS from '../costs.js'
 
 class Order extends Component {
   constructor() {
     super()
     this.state = {
-      chair: { quantity: 0, unitCost: 123 },
-      desk: { quantity: 0, unitCost: 218 },
-      conference_table: { quantity: 0, unitCost: 303 },
-      filing_cabinet: { quantity: 0, unitCost: 95 },
-      lounge_seating: { quantity: 0, unitCost: 272 },
-      coffee_table: { quantity: 0, unitCost: 127 }
+      term: 6,
+      quantities: {
+        chair: 0,
+        desk: 0,
+        conference_table: 0,
+        filing_cabinet: 0,
+        lounge_seating: 0,
+        coffee_table: 0
+      }
     }
     this.increment = this.increment.bind(this)
     this.decrement = this.decrement.bind(this)
     this.calculateTotalCostForRow = this.calculateTotalCostForRow.bind(this)
     this.submitOrder = this.submitOrder.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  setProductQuantity(product_name, quantity) {
+    this.setState({
+      term: this.state.term,
+      quantities: {
+        ...this.state.quantities,
+        [product_name]: quantity
+      }
+    })
+  }
+
+  calculateCalculatedCost(product) {
+    console.log("product", product)
+
+    return
   }
 
   increment = product => () => {
-    const new_product_quantity = Object.assign({}, this.state[product], {
-      quantity: this.state[product].quantity + 1
-    })
+    const new_product_quantity = this.state.quantities[product] + 1
 
-    this.setState({ [product]: new_product_quantity })
+    this.setProductQuantity(product, new_product_quantity)
   }
 
   decrement = product => () => {
-    const new_product_quantity = Object.assign({}, this.state[product], {
-      quantity: Math.max(this.state[product].quantity - 1, 0)
-    })
+    const new_product_quantity = Math.max(this.state.quantities[product] - 1, 0)
 
-    this.setState({ [product]: new_product_quantity })
+    this.setProductQuantity(product, new_product_quantity)
   }
 
   calculateTotalCostForRow(product) {
-    let totalCost = this.state[product].quantity * this.state[product].unitCost
+    let totalCost =
+      this.state.quantities[product] * COSTS[product][this.state.term]
     return totalCost
   }
 
   calculateTotalQuantity() {
-    let quantity = Object.keys(this.state).reduce((result, key) => {
-      result = this.state[key].quantity + result
+    let quantity = Object.keys(this.state.quantities).reduce((result, key) => {
+      result = this.state.quantities[key] + result
       return result
     }, 0)
 
@@ -51,7 +71,7 @@ class Order extends Component {
   }
 
   calculateTotalCost() {
-    let totalCost = Object.keys(this.state).reduce((result, key) => {
+    let totalCost = Object.keys(this.state.quantities).reduce((result, key) => {
       result = this.calculateTotalCostForRow(key) + result
       return result
     }, 0)
@@ -61,6 +81,10 @@ class Order extends Component {
 
   submitOrder() {
     console.log("this.state", this.state)
+  }
+
+  handleChange(term) {
+    this.setState({ term })
   }
 
   render() {
@@ -83,64 +107,74 @@ class Order extends Component {
             <tbody className="lh-copy b">
               <OrderRow
                 product="Chair"
-                unitCost={this.state.chair.unitCost}
-                quantity={this.state.chair.quantity}
+                calculatedCost={COSTS.chair[this.state.term]}
+                quantity={this.state.quantities.chair}
                 increment={this.increment("chair")}
                 decrement={this.decrement("chair")}
                 totalCost={this.calculateTotalCostForRow("chair")}
               />
               <OrderRow
                 product="Desk"
-                unitCost={this.state.desk.unitCost}
-                quantity={this.state.desk.quantity}
+                calculatedCost={COSTS.desk[this.state.term]}
+                quantity={this.state.quantities.desk}
                 increment={this.increment("desk")}
                 decrement={this.decrement("desk")}
                 totalCost={this.calculateTotalCostForRow("desk")}
               />
               <OrderRow
                 product="Conference Table"
-                unitCost={this.state.conference_table.unitCost}
-                quantity={this.state.conference_table.quantity}
+                calculatedCost={COSTS.conference_table[this.state.term]}
+                quantity={this.state.quantities.conference_table}
                 increment={this.increment("conference_table")}
                 decrement={this.decrement("conference_table")}
                 totalCost={this.calculateTotalCostForRow("conference_table")}
               />
               <OrderRow
                 product="Filing Cabinet"
-                unitCost={this.state.filing_cabinet.unitCost}
-                quantity={this.state.filing_cabinet.quantity}
+                calculatedCost={COSTS.filing_cabinet[this.state.term]}
+                quantity={this.state.quantities.filing_cabinet}
                 increment={this.increment("filing_cabinet")}
                 decrement={this.decrement("filing_cabinet")}
                 totalCost={this.calculateTotalCostForRow("filing_cabinet")}
               />
               <OrderRow
                 product="Lounge Seating"
-                unitCost={this.state.lounge_seating.unitCost}
-                quantity={this.state.lounge_seating.quantity}
+                calculatedCost={COSTS.lounge_seating[this.state.term]}
+                quantity={this.state.quantities.lounge_seating}
                 increment={this.increment("lounge_seating")}
                 decrement={this.decrement("lounge_seating")}
                 totalCost={this.calculateTotalCostForRow("lounge_seating")}
               />
               <OrderRow
                 product="Coffee Table"
-                unitCost={this.state.coffee_table.unitCost}
-                quantity={this.state.coffee_table.quantity}
+                calculatedCost={COSTS.coffee_table[this.state.term]}
+                quantity={this.state.quantities.coffee_table}
                 increment={this.increment("coffee_table")}
                 decrement={this.decrement("coffee_table")}
                 totalCost={this.calculateTotalCostForRow("coffee_table")}
               />
-              <tr>
-                <td />
-                <td />
-                <td className="tr pa3">
-                  <div>Quantity: {this.calculateTotalQuantity()}</div>
-                </td>
-                <td className="tr pa3">
-                  <span>Monthly Cost: {this.calculateTotalCost()}</span>
-                </td>
-              </tr>
+              <tr />
             </tbody>
           </table>
+          <div className="flex justify-between items-center mw7 center">
+            <div className="mr4">
+              Lease Engagement Term: {this.state.term} months
+            </div>
+            <div style={{ flexGrow: 2 }} className="mr4">
+              <Slider
+                min={1}
+                max={12}
+                value={this.state.term}
+                //onChangeStart={this.handleChangeStart}
+                onChange={this.handleChange}
+                //onChangeComplete={this.handleChangeComplete}
+              />
+            </div>
+            <span className="mr4">
+              Quantity: {this.calculateTotalQuantity()}
+            </span>
+            <span>Monthly: {this.calculateTotalCost()}</span>
+          </div>
         </div>
 
         <CenteredHeaderWithDescription header="Your contact details so we can get in touch" />

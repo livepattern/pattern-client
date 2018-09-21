@@ -24,10 +24,10 @@ const Home = () => {
       </div>
 
       {/* Free consultation */}
-      <div className="h3 flex items-center justify-center yellow-bg fw5 ph3">
-        For expert furniture advice, schedule a FREE consultation with our
-        designers
-      </div>
+      <a target="_blank" href="http://calendly.com/pattern-604" className="h3 flex items-center justify-center yellow-bg fw5 ph3 sticky">
+        <span>For expert furniture advice, <span className="underline">schedule a FREE consultation</span> with our
+        designers</span>
+      </a>
 
       {/* How it Works */}
       <div className="light-yellow-bg pb5">
