@@ -1,10 +1,10 @@
 import React, { Component } from "react"
 import Slider from "react-rangeslider"
-import Form from "./components/Form"
-import OrderRow from "./components/OrderRow"
-import CenteredHeaderWithDescription from "./components/CenteredHeaderWithDescription"
+import Form from "./components/form"
+import OrderRow from "./components/order_row"
+import CenteredHeaderWithDescription from "./components/centered_header_with_description"
 import "react-rangeslider/lib/index.css"
-import COSTS from "../costs.js"
+import COSTS from "../costs"
 
 class Order extends Component {
   constructor() {

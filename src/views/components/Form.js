@@ -1,6 +1,5 @@
 import React from 'react'
-import TC from './TC'
-import Button from "./Button"
+import Button from "./button"
 
 const Form = ({
   onSubmit,
@@ -15,7 +14,6 @@ const Form = ({
         <label className="w-100 pa3">
           <textarea name="message" placeholder="Message (optional)" />
         </label>
-        <TC />
 
         <Button text="Contact us with your order" onClick={onSubmit} />
       </form>

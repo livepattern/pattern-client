@@ -2,9 +2,9 @@ import React, { Component } from "react"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import "./App.css"
 import Home from "./views/home"
-import TC from './views/TC'
-import Order from "./views/Order"
-import Header from './views/components/Header'
+import TC from './views/terms'
+import Order from "./views/order"
+import Header from './views/components/header'
 
 class App extends Component {
   render() {
