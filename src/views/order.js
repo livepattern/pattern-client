@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import Slider from "react-rangeslider"
-import Form from "./components/form"
+import Form from "./components/Form"
 import OrderRow from "./components/order_row"
 import CenteredHeaderWithDescription from "./components/centered_header_with_description"
 import "react-rangeslider/lib/index.css"

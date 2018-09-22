@@ -4,7 +4,7 @@ import "./App.css"
 import Home from "./views/home"
 import TC from './views/terms'
 import Order from "./views/order"
-import Header from './views/components/header'
+import Header from './views/components/Header'
 
 class App extends Component {
   render() {

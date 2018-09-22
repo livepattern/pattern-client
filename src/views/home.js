@@ -1,5 +1,5 @@
 import React from "react"
-import Footer from "./components/footer"
+import Footer from "./components/Footer"
 import CenteredHeaderWithDescription from "./components/centered_header_with_description"
 import HowItWorksIconGroup from './components/how_it_works_icon_group'
 import Button from "./components/Button"
