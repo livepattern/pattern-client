@@ -4,7 +4,7 @@ import Form from "./components/Form"
 import OrderRow from "./components/OrderRow"
 import CenteredHeaderWithDescription from "./components/CenteredHeaderWithDescription"
 import "react-rangeslider/lib/index.css"
-import COSTS from '../costs.js'
+import COSTS from "../costs.js"
 
 class Order extends Component {
   constructor() {
@@ -80,7 +80,35 @@ class Order extends Component {
   }
 
   submitOrder() {
-    console.log("this.state", this.state)
+    let _body = {
+      email: "manan@gmail.com",
+      message: "Hello World!",
+      order: {
+        term: 12,
+        cart: [
+          {
+            product: "Chair",
+            quantity: 2,
+            price: 60
+          },
+          {
+            product: "Table",
+            quantity: 1,
+            price: 80
+          }
+        ]
+      }
+    }
+
+    fetch("https://api.livepattern.com/api/v1/store", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(_body)
+    })
+      .then(res => res.json().then(res => console.log(res)))
+      .catch(error => {
+        console.log("error", error)
+      })
   }
 
   handleChange(term) {
