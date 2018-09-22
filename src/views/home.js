@@ -2,7 +2,7 @@ import React from "react"
 import Footer from "./components/footer"
 import CenteredHeaderWithDescription from "./components/centered_header_with_description"
 import HowItWorksIconGroup from './components/how_it_works_icon_group'
-import Button from "./components/button"
+import Button from "./components/Button"
 import delivery_icon from "../icons/delivery.png"
 import price_icon from "../icons/price.png"
 import style_icon from "../icons/style.png"
