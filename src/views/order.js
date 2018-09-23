@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Slider from "react-rangeslider"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Button from "./components/Button"
 import OrderRow from "./components/order_row"
 import OrderRowMobile from "./components/order_row_mobile"
@@ -303,11 +304,11 @@ class Order extends Component {
           {/* Mobile */}
           <div className="dn-l mh3 mt3 pb3">
             <div className="flex justify-between">
-              <span className="b f4">
+              <span className="b f5">
                 Quantity: {this.calculateTotalQuantity()}
               </span>
               <span>
-                <span className="b f4">
+                <span className="b f5">
                   Monthly: ${this.calculateTotalCost()}
                   .00{" "}
                 </span>
@@ -374,6 +375,7 @@ class Order extends Component {
               </div>
             )}
 
+            <div className="tc mb4">By sending your order, you agree to our <Link to="/terms" target="_blank" className="underline">Terms & Conditions</Link></div>
             <Button
               text="Contact us with your order"
               onClick={this.submitOrder}

@@ -26,7 +26,7 @@ const Footer = () => {
           >
             How it Works
           </AnchorLink>
-          <Link className="underline-hover mr3 nowrap" to="/terms&conditions">
+          <Link className="underline-hover mr3 nowrap" to="/terms">
             Terms & Conditions
           </Link>
         </div>

@@ -149,7 +149,6 @@ class ProductGrid extends Component {
   }
 
   render() {
-    console.log("this.state.current index", this.state.currentIndex)
     const options = []
     for (var i = 1; i <= 12; i++) {
       options.push({
