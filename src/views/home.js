@@ -1,13 +1,13 @@
 import React from "react"
 import Footer from "./components/Footer"
 import CenteredHeaderWithDescription from "./components/centered_header_with_description"
-import HowItWorksIconGroup from './components/how_it_works_icon_group'
+import HowItWorksIconGroup from "./components/how_it_works_icon_group"
 import Button from "./components/Button"
 import delivery_icon from "../icons/delivery.png"
 import price_icon from "../icons/price.png"
 import style_icon from "../icons/style.png"
 import truck_photo from "../images/truck.png"
-import ProductGrid from './components/product_grid'
+import ProductGrid from "./components/product_grid"
 
 const Home = () => {
   return (
@@ -25,9 +25,16 @@ const Home = () => {
       </div>
 
       {/* Free consultation */}
-      <a target="_blank" href="http://calendly.com/pattern-604" className="h3 flex items-center justify-center yellow-bg fw5 ph3 sticky">
-        <span>For expert furniture advice, <span className="underline">schedule a FREE consultation</span> with our
-        designers</span>
+      <a
+        target="_blank"
+        href="http://calendly.com/pattern-604"
+        className="h3 flex items-center justify-center yellow-bg fw5 ph3 sticky"
+      >
+        <span>
+          For expert furniture advice,{" "}
+          <span className="underline">schedule a FREE consultation</span> with
+          our designers
+        </span>
       </a>
 
       {/* How it Works */}
@@ -69,9 +76,9 @@ const Home = () => {
         description="Here's our style"
       />
 
-      <ProductGrid/>
-
-      <div className="h6 pa5 bg-light-gray mb3" />
+      <div className="mb5">
+        <ProductGrid />
+      </div>
 
       <div className="flex flex-column items-center mb5">
         <div className="mb4 ph3">
@@ -89,10 +96,7 @@ const Home = () => {
           <div className="mb3">Get your quote in less than 24 hours.</div>
           <div className="mb3">Enjoy free delivery with a smile.</div>
         </div>
-        <div
-          className="w-100 w-50-l"
-          style={{ objectFit: "cover" }}
-        >
+        <div className="w-100 w-50-l" style={{ objectFit: "cover" }}>
           <img src={truck_photo} />
         </div>
       </div>
