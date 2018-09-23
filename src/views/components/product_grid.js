@@ -234,7 +234,7 @@ class ProductGrid extends Component {
               <div className="flex justify-center items-center">
                 <div className="flex items-center justify-between w-100">
                   <div
-                    className="flex h4 items-center justify-center w3"
+                    className="flex h4 items-center justify-center w3 pointer"
                     onClick={this.previousImage}
                   >
                     <img src={ArrowLeft} className="h3-ns h2 mr3" />
@@ -248,7 +248,7 @@ class ProductGrid extends Component {
                     )}
                   </div>
                   <div
-                    className="flex h4 items-center justify-center w3"
+                    className="flex h4 items-center justify-center w3 pointer"
                     onClick={this.nextImage}
                   >
                     <img src={ArrowRight} className="h3-ns h2 ml3" />
