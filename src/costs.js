@@ -1,5 +1,5 @@
 const COSTS = {
-  chair: {
+  Chair: {
     1: 123,
     2: 117,
     3: 111,
@@ -13,7 +13,7 @@ const COSTS = {
     11: 74,
     12: 70
   },
-  desk: {
+  Desk: {
     1: 218,
     2: 207,
     3: 197,
@@ -27,7 +27,7 @@ const COSTS = {
     11: 131,
     12: 124
   },
-  conference_table: {
+  "Conference Table": {
     1: 303,
     2: 288,
     3: 273,
@@ -41,7 +41,7 @@ const COSTS = {
     11: 181,
     12: 172
   },
-  filing_cabinet: {
+  "Filing Cabinet": {
     1: 95,
     2: 90,
     3: 86,
@@ -55,7 +55,7 @@ const COSTS = {
     11: 57,
     12: 54
   },
-  lounge_seating: {
+  "Lounge Seating": {
     1: 272,
     2: 259,
     3: 245,
@@ -69,7 +69,7 @@ const COSTS = {
     11: 163,
     12: 155
   },
-  coffee_table: {
+  "Coffee Table": {
     1: 127,
     2: 121,
     3: 115,

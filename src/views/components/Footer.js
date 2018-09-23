@@ -1,6 +1,7 @@
 import React from "react"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { PHONE_NUMBER, EMAIL } from '../../vars'
 import logo from "../../images/logo.png"
 
 const Footer = () => {
@@ -30,15 +31,12 @@ const Footer = () => {
           </Link>
         </div>
         <div className="center">
-          <a className="underline-hover mr2 b" href="tel:1-562-867-5309">
-            1-555-444-5555
+        <a className="underline-hover mr2 b" href={`tel:${PHONE_NUMBER}`}>
+            {PHONE_NUMBER}
           </a>{" "}
           |
-          <a
-            className="underline-hover ml2 b"
-            href="mailto:contact@livepattern.com"
-          >
-            contact@livepattern.com
+          <a className="underline-hover ml2 b" href={`mailto:${EMAIL}`}>
+            {EMAIL}
           </a>
         </div>
       </div>

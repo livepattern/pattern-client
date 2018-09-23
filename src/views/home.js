@@ -7,6 +7,7 @@ import delivery_icon from "../icons/delivery.png"
 import price_icon from "../icons/price.png"
 import style_icon from "../icons/style.png"
 import truck_photo from "../images/truck.png"
+import ProductGrid from './components/product_grid'
 
 const Home = () => {
   return (
@@ -67,7 +68,11 @@ const Home = () => {
         id="furnish-your-space"
         description="Here's our style"
       />
+
+      <ProductGrid/>
+
       <div className="h6 pa5 bg-light-gray mb3" />
+
       <div className="flex flex-column items-center mb5">
         <div className="mb4 ph3">
           Need something different? We're flexible so send us your floorplan or

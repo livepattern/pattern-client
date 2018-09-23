@@ -18,7 +18,7 @@ class Stepper extends Component {
   render() {
     return (
       <div className="flex">
-        <div className="flex mr3">
+        <div className="flex items-center mr3">
           <Counter
             onClick={this.props.decrement}
             value={this.props.quantity}

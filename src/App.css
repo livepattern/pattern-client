@@ -22,6 +22,12 @@ input, textarea {
   border-bottom: 1px solid #ccc;
 }
 
+select {
+  border: 1px solid black;
+  padding: 7px;
+  border-radius: 0;
+}
+
 #hero {
   background-image: url(./images/hero.jpg);
   background-size: cover;
@@ -55,6 +61,10 @@ input, textarea {
   box-shadow: 0 2px 4px 0 rgba(50,50,93,.1);
 }
 
+.f7 {
+  font-size: 0.75rem;
+}
+
 .yellow-bg {
   background-color: #FCDF5C;
 }
@@ -79,6 +89,10 @@ input, textarea {
   user-select: none;
 }
 
+.invalid {
+  border-bottom-color: red;
+}
+
 .sticky {
   position: sticky;
   top: 62px;
@@ -90,4 +104,26 @@ input, textarea {
 
 .rangeslider-horizontal .rangeslider__fill {
   background-color: #FCDF5C !important;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-rows: 100px 100px; */
+  grid-column-gap: 10px;
+  grid-row-gap: 50px;
+}
+.product-grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  border: 10px solid #F8F8F8;
 }
