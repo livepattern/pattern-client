@@ -29,7 +29,7 @@ const OrderRow = ({
       </td>
       <td className="pa3 tr nowrap">
         <span className="b">${totalCost}.00</span>{" "}
-        <span className="f7">CAN</span>
+        <span className="f7">CAD</span>
       </td>
     </tr>
   )

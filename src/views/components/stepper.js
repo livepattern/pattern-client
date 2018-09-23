@@ -17,7 +17,7 @@ const Counter = ({ children, onClick, value, hasMin = false, min }) => {
 class Stepper extends Component {
   render() {
     return (
-      <div className="flex">
+      <div className="flex justify-center">
         <div className="flex items-center mr3">
           <Counter
             onClick={this.props.decrement}

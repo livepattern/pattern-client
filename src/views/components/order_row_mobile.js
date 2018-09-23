@@ -19,7 +19,7 @@ const OrderRowMobile = ({
         />
       </td>
       <td className="tr">
-        <span className="b">${calculatedCost}</span> <span className="f7">CAN</span>
+        <span className="b">${calculatedCost}</span> <span className="f7">CAD</span>
       </td>
     </tr>
   )

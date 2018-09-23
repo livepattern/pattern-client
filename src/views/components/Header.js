@@ -19,7 +19,7 @@ const Contact = ({ phone_text, email_text }) => {
 
 const Header = () => {
   return (
-    <div className="nav flex h3 justify-between ph3 ph5-l items-center sans fixed bg-white w-100 top-0 z-5">
+    <div className="hide-when-modal-open flex h3 justify-between ph3 ph5-l items-center sans fixed bg-white w-100 top-0 z-5">
       <Link to="/">
         <img src={logo} width={120} />
       </Link>

@@ -28,7 +28,7 @@ const Home = () => {
       <a
         target="_blank"
         href="http://calendly.com/pattern-604"
-        className="h3 flex items-center justify-center yellow-bg fw5 ph3 sticky"
+        className="hide-when-modal-open h3 flex items-center justify-center yellow-bg fw5 ph3 sticky"
       >
         <span>
           For expert furniture advice,{" "}
@@ -89,15 +89,14 @@ const Home = () => {
       </div>
 
       <div className="flex flex-column flex-row-l">
-        <div className="w-100 w-50-l light-yellow-bg pa3 pa5-m pa5-l serif f3 lh-copy tc flex flex-column items-center justify-center">
+        <div className="w-100 w-50-l light-yellow-bg pa3 pa5-m pa5-l serif f3-ns f5 lh-copy tc flex flex-column items-center justify-center">
           <div className="mb3">
             Pattern is Vancouver’s leading furniture rental company.
           </div>
           <div className="mb3">Get your quote in less than 24 hours.</div>
           <div className="mb3">Enjoy free delivery with a smile.</div>
         </div>
-        <div className="w-100 w-50-l" style={{ objectFit: "cover" }}>
-          <img src={truck_photo} />
+        <div className="w-100 w-50-l truck-photo">
         </div>
       </div>
       {/* About Pattern */}

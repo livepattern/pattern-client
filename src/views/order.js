@@ -117,13 +117,6 @@ class Order extends Component {
       }
     })
 
-    if (cart.length < 1) {
-      // deal with empty cart
-      console.log("cart is empty")
-      this.setState({ cartIsEmpty: true })
-      return
-    }
-
     let _body = {
       email: this.state.email,
       message: this.state.message,
@@ -180,9 +173,9 @@ class Order extends Component {
         />
 
         {/* MOBILE */}
-        <div className="bg-near-white mh3 mr5-ns ml5-ns pa3-ns">
-          <div className="dn-ns">
-            <div className="flex justify-around b items-center pv3">
+        <div className="bg-near-white mh3 mh6-l pa3-l">
+          <div className="dn-l">
+            <div className="flex justify-between mh3 b items-center pv3">
               Lease Engagement Term:
               <select
                 value={this.state.term}
@@ -190,7 +183,11 @@ class Order extends Component {
                 name="term"
               >
                 {options.map(month => {
-                  return <option key={month.value} value={month.value}>{month.label}</option>
+                  return (
+                    <option key={month.value} value={month.value}>
+                      {month.label}
+                    </option>
+                  )
                 })}
               </select>
             </div>
@@ -243,13 +240,13 @@ class Order extends Component {
           </div>
 
           {/* DESKTOP */}
-          <table className="f5 mw8 center dn dt-ns" cellSpacing="0">
-            {/* <colgroup>
+          <table className="f5 dn dt-l w-100" cellSpacing="0">
+            <colgroup>
               <col width="30%" />
               <col width="20%" />
               <col width="30%" />
               <col width="20%" />
-            </colgroup> */}
+            </colgroup>
             <tbody className="lh-copy">
               <OrderRow
                 product="Chair"
@@ -302,13 +299,15 @@ class Order extends Component {
               <tr />
             </tbody>
           </table>
-          <div className="dn-ns mh3 mt3 pb3">
-            <div className="flex justify-around">
-              <span className="b">
+
+          {/* Mobile */}
+          <div className="dn-l mh3 mt3 pb3">
+            <div className="flex justify-between">
+              <span className="b f4">
                 Quantity: {this.calculateTotalQuantity()}
               </span>
               <span>
-                <span className="b">
+                <span className="b f4">
                   Monthly: ${this.calculateTotalCost()}
                   .00{" "}
                 </span>
@@ -316,12 +315,13 @@ class Order extends Component {
               </span>
             </div>
           </div>
-          <div className="dn db-ns">
-            <div className="flex justify-between items-center mw7 center">
-              <div className="mr4">
-                Lease Engagement Term: {this.state.term} months
-              </div>
-              <div style={{ flexGrow: 2 }} className="mr4">
+
+          {/* Desktop */}
+          <div className="dn db-l">
+            <div className="flex justify-between items-center mh3 b w-100">
+              Lease Engagement Term:{" "}
+              <span className="ml3">{this.state.term} months</span>
+              <div className="slider-container">
                 <Slider
                   min={1}
                   max={12}
@@ -329,10 +329,11 @@ class Order extends Component {
                   onChange={this.handleChange}
                 />
               </div>
+              Quantity: {this.calculateTotalQuantity()}
               <span className="mr4">
-                Quantity: {this.calculateTotalQuantity()}
+                Monthly: ${this.calculateTotalCost()}
+                .00 CAD
               </span>
-              <span>Monthly: {this.calculateTotalCost()}</span>
             </div>
           </div>
         </div>
@@ -359,10 +360,6 @@ class Order extends Component {
                 value={this.state.message}
               />
             </label>
-
-            {/* {show_cart_empty_prompt && (
-              <div className="red tc mb3 mt3">Please add at least one item to your cart.</div>
-            )} */}
 
             {this.state.submitError && (
               <div className="red tc mb3 mt3">

@@ -98,13 +98,16 @@ select {
   overflow: hidden;
 }
 
+.ReactModal__Body--open .hide-when-modal-open {
+  display: none;
+}
+
 .rangeslider-horizontal .rangeslider__fill {
   background-color: #fcdf5c !important;
 }
 
 .slider-container {
   max-width: 200px;
-  display: inline-block;
   flex-grow: 1;
 }
 
@@ -150,7 +153,6 @@ select {
   height: 100%;
   width: 100%;
   position: absolute;
-  /* transition: all 0.2s ease; */
 }
 
 .ghost:hover {
@@ -176,18 +178,23 @@ select {
   background-color: white;
   height: 50px;
   width: 50px;
+}
 
-  /* content: "Pseudo child text";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border: 1px solid red;
-  display:flex;
-  flex-direction:row;
-  align-items: center;
-  justify-content: center; */
+.truck-photo {
+  background-image: url('./images/truck.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 300px;
+}
+
+@media only screen and (min-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .truck-photo {
+    min-height: 400px;
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -199,7 +206,7 @@ select {
   .product-grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
-}
-
-@media only screen and (min-width: 480px) {
+  .truck-photo {
+    min-height: 500px;
+  }
 }
